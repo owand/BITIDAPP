@@ -17,7 +17,7 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>BITIDAPP.UWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>BITIDAPPKey.pfx</PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxPackageDir>D:\myApps\Store\</AppxPackageDir>
@@ -121,7 +121,7 @@
     <Content Include="Assets\Images\default_image_app.png" />
     <Content Include="Assets\Images\logo_image_app.png" />
     <Content Include="Assets\materialdesignicons-webfont.ttf" />
-    <None Include="BITIDAPP.UWP_TemporaryKey.pfx" />
+    <None Include="BITIDAPPKey.pfx" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
