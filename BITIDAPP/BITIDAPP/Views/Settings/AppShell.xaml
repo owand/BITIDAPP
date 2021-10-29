@@ -5,7 +5,7 @@
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        mc:Ignorable="d"
        xmlns:resources="clr-namespace:BITIDAPP.Resources"
-       xmlns:contents="clr-namespace:BITIDAPP.Views.Bits"
+       xmlns:contents="clr-namespace:BITIDAPP.Views.BHA"
        xmlns:views="clr-namespace:BITIDAPP.Views.Settings"
        FlyoutHeaderBehavior="CollapseOnScroll"
        FlyoutBackgroundColor="#2D353E"

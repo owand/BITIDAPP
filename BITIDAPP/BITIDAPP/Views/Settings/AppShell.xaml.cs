@@ -1,4 +1,4 @@
-﻿using BITIDAPP.Views.Bits;
+﻿using BITIDAPP.Views.BHA;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

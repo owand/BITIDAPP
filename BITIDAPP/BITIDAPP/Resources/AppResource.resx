@@ -1031,4 +1031,8 @@ mm</value>
     <value>Default</value>
     <comment>Тема приложения по умолчанию</comment>
   </data>
+  <data name="TitleBHAGroup" xml:space="preserve">
+    <value>BHA ELEMENTS</value>
+    <comment>Заголовок элементов КНБК</comment>
+  </data>
 </root>

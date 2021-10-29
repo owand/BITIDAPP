@@ -78,7 +78,7 @@
                                     <FormattedString>
                                         <Span Text="{x:Static resources:AppResource.Adblock}" TextDecorations="Underline" >
                                             <Span.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="AdblockPurchase" />
+                                                <TapGestureRecognizer Tapped="ProVersionPurchase" />
                                             </Span.GestureRecognizers>
                                         </Span>
                                         <Span Text=" "/>

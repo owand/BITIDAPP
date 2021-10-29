@@ -19,11 +19,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="BITDBCatalog.db" />
+    <None Remove="DBCatalog.db" />
+    <None Remove="MaterialDesignIcons.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="BITDBCatalog.db" />
+    <EmbeddedResource Include="DBCatalog.db" />
+    <EmbeddedResource Include="MaterialDesignIcons.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,8 +34,7 @@
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />  
-    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.41" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,16 +53,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Bits\BitCodePage.xaml">
+    <EmbeddedResource Update="Views\BHA\BitCodePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Bits\BitDecodePage.xaml">
+    <EmbeddedResource Update="Views\BHA\BitDecodePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Bits\BitODPage.xaml">
+    <EmbeddedResource Update="Views\BHA\BitODPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Bits\BitTypePage.xaml">
+    <EmbeddedResource Update="Views\BHA\BitTypePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Settings\AppShell.xaml">

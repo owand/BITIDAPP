@@ -13,11 +13,21 @@
     <Color x:Key="PlaceholderColor_Dark">Gray</Color>
     <Color x:Key="PlaceholderColor_Light">Gray</Color>
 
+    <x:String x:Key="SettingIcon">&#xF0235;</x:String>
+    <x:String x:Key="FilterCancelIcon">&#xF0235;</x:String>
+    <x:String x:Key="DeleteIcon">&#xF09E7;</x:String>
+    <x:String x:Key="AddIcon">&#xF01BA;</x:String>
+    <x:String x:Key="EditIcon">&#xF090C;</x:String>
+    <x:String x:Key="CancelIcon">&#xF0156;</x:String>
+    <x:String x:Key="SaveIcon">&#xF0193;</x:String>
+    <x:String x:Key="FilterIcon">&#xF0233;</x:String>
+    <x:String x:Key="LinkIcon">&#xF0339;</x:String>
 
-    <OnPlatform x:Key="MaterialIconFont" x:TypeArguments="x:String">
+
+    <OnPlatform x:Key="MaterialIcons" x:TypeArguments="x:String">
         <!--<On Platform="iOS" Value="Material Design Icons" />-->
-        <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
-        <On Platform="UWP" Value="Assets/materialdesignicons-webfont.ttf#Material Design Icons" />
+        <On Platform="Android" Value="MaterialDesignIcons.ttf#Material Design Icons" />
+        <On Platform="UWP" Value="Assets/MaterialDesignIcons.ttf#Material Design Icons" />
     </OnPlatform>
 
 
@@ -29,7 +39,6 @@
         <Setter Property="VerticalOptions" Value="Start" />
         <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColor_Dark}, Light={StaticResource TextColor_Light}}" />
         <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource PlaceholderColor_Dark}, Light={StaticResource PlaceholderColor_Light}}" />
-        <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Background_Dark}, Light={StaticResource Background_Light}}" />-->
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="IsSpellCheckEnabled" Value="true" />
         <Setter Property="Keyboard" Value="Text" />
@@ -44,7 +53,6 @@
         <Setter Property="VerticalOptions" Value="Start" />
         <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColor_Dark}, Light={StaticResource TextColor_Light}}" />
         <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource PlaceholderColor_Dark}, Light={StaticResource PlaceholderColor_Light}}" />
-        <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Background_Dark}, Light={StaticResource Background_Light}}" />-->
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="IsSpellCheckEnabled" Value="true" />
         <Setter Property="Keyboard" Value="Text" />
@@ -52,16 +60,17 @@
     </Style>
 
     <!-- Style for Entry SearchBar -->
-    <Style TargetType="Entry" x:Key="entrySearchBarStyle" ApplyToDerivedTypes="True">
+    <Style TargetType="SearchBar" x:Key="searchBarStyle" ApplyToDerivedTypes="True">
         <Setter Property="FontSize" Value="{OnPlatform Android='14', iOS='14', UWP='14'}" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalTextAlignment" Value="Start" />
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="PlaceholderColor" Value="{AppThemeBinding Dark={StaticResource PlaceholderColor_Dark}, Light={StaticResource PlaceholderColor_Light}}" />
         <Setter Property="IsSpellCheckEnabled" Value="true" />
         <Setter Property="TextColor" Value="white" />
+        <Setter Property="TextTransform" Value="Lowercase" />
         <Setter Property="Keyboard" Value="Text" />
-        <Setter Property="Margin" Value="{OnPlatform Android='6,4,0,4', iOS='6,4,0,4', UWP='6,8,0,8'}" />
+        <Setter Property="Margin" Value="{OnPlatform Android='-12,4,-24,4', iOS='6,4,0,4', UWP='6,8,-24,8'}" />
     </Style>
 
     <!-- Style for Label -->
@@ -89,7 +98,8 @@
     <!-- Style for Picker -->
     <Style TargetType="Picker" x:Key="pickerStyle" ApplyToDerivedTypes="True">
         <Setter Property="TextColor" Value="{AppThemeBinding Dark={StaticResource TextColor_Dark}, Light={StaticResource TextColor_Light}}" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
+        <!--<Setter Property="BackgroundColor" Value="Transparent" />-->
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Background_Dark}, Light={StaticResource Background_Light}}" />
         <Setter Property="FontSize" Value="{OnPlatform Android='14', iOS='14', UWP='14'}" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="VerticalOptions" Value="Start" />
@@ -106,7 +116,7 @@
         <Setter Property="FontSize" Value="{OnPlatform Android='24', iOS='24', UWP='24'}" />
         <Setter Property="TextColor" Value="White" />
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="FontFamily" Value="{x:StaticResource MaterialIconFont}" />
+        <Setter Property="FontFamily" Value="{x:StaticResource MaterialIcons}" />
     </Style>
 
     <!-- Style for Button for Filter-->
@@ -115,10 +125,10 @@
         <Setter Property="HorizontalOptions" Value="End" />
         <Setter Property="WidthRequest" Value="{OnPlatform Android='48', iOS='48', UWP='40'}" />
         <Setter Property="BorderWidth" Value="0" />
-        <Setter Property="FontSize" Value="{OnPlatform Android='24', iOS='24', UWP='24'}" />
+        <Setter Property="FontSize" Value="{OnPlatform Android='24', iOS='24', UWP='22'}" />
         <Setter Property="TextColor" Value="White" />
         <Setter Property="BackgroundColor" Value="Transparent" />
-        <Setter Property="FontFamily" Value="{x:StaticResource MaterialIconFont}" />
+        <Setter Property="FontFamily" Value="{x:StaticResource MaterialIcons}" />
         <Setter Property="Margin" Value="{OnPlatform Android='0,0,4,0', iOS='0,0,4,0', UWP='0,8,8,8'}" />
     </Style>
 
@@ -141,6 +151,8 @@
     <Style TargetType="Frame" x:Key="frameStyle" ApplyToDerivedTypes="true">
         <Setter Property="Margin" Value="{OnPlatform Android='0,8,8,0', iOS='0,8,8,0', UWP='0,8,0,0'}" />
         <Setter Property="Padding" Value="{x:OnIdiom Phone='4', Tablet='4', Desktop='4'}" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="VerticalOptions" Value="Start" />
     </Style>
 
     <!-- Style for ImageButtonBar -->
@@ -169,7 +181,6 @@
         <Setter Property="TextColor" Value="White" />
         <Setter Property="Margin" Value="4,4,4,4" />
     </Style>
-
 
     <!-- My Header Filter Height -->
     <OnIdiom x:Key="HeaderFilterHeight" x:TypeArguments="x:Double" Phone="44" Tablet="48" Desktop="48" />
