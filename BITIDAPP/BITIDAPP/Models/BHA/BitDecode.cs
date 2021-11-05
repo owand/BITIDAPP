@@ -22,15 +22,10 @@ namespace BITIDAPP.Models.BHA
             //    App.Database.GetChildren(element);
             //}
 
-            //Code1SymbolList = null;
             Code1SymbolList = Id == 0 ? null : new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 1 && c.LANGUAGE == App.AppLanguage).ToList());
-            //Code1SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 1 && c.LANGUAGE == App.AppLanguage).ToList());
             Code2SymbolList = Id == 0 ? null : new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 2 && c.LANGUAGE == App.AppLanguage).ToList());
-            //Code2SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 2 && c.LANGUAGE == App.AppLanguage).ToList());
             Code3SymbolList = Id == 0 ? null : new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 3 && c.LANGUAGE == App.AppLanguage).ToList());
-            //Code3SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 3 && c.LANGUAGE == App.AppLanguage).ToList());
             Code4SymbolList = Id == 0 ? null : new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 4 && c.LANGUAGE == App.AppLanguage).ToList());
-            //Code4SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 4 && c.LANGUAGE == App.AppLanguage).ToList());
         }
 
         public List<BitCodeModel> DecodeContent(int TypeId, string Symbol_1, string Symbol_2, string Symbol_3, string Symbol_4)
