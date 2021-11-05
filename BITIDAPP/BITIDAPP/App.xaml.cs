@@ -144,6 +144,17 @@ namespace BITIDAPP
         {
             try
             {
+                var mDialog = new ProgressDialog(this);
+                mDialog.SetMessage("Loading data...");
+                mDialog.SetCancelable(false);
+                mDialog.Show();
+
+                await Task.Run((() => Foo()));
+                // Alternatively
+                // await Task.Delay(10000);
+
+                mDialog.Dismiss();
+
                 Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{GetType().Namespace}.{Constants.dbName}");
                 if (stream == null)
                 {
