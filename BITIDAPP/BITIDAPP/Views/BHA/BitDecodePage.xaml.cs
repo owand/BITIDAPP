@@ -12,7 +12,7 @@ namespace BITIDAPP.Views.BHA
         private BitDecode viewModel = null;
         private BitTypeListViewModel typeListViewModel = null;
 
-        private int BitType;
+        private int BitType = 0;
         private string Symbol_1 = null;
         private string Symbol_2 = null;
         private string Symbol_3 = null;
@@ -25,7 +25,7 @@ namespace BITIDAPP.Views.BHA
         }
 
         // События непосредственно перед тем как страница становится видимой.
-        protected override async void OnAppearing()
+        protected override/* async*/ void OnAppearing()
         {
             base.OnAppearing();
 
@@ -35,13 +35,16 @@ namespace BITIDAPP.Views.BHA
 
                 BindingContext = viewModel = viewModel ?? new BitDecode(BitType);
 
+                //if (App.database != null)
+                //{
                 picTYPENAME.BindingContext = typeListViewModel = typeListViewModel ?? new BitTypeListViewModel();
+                //}
 
                 IsBusy = false;
             }
             catch (Exception ex)
             {
-                await DisplayAlert(AppResource.messageError, ex.Message, AppResource.messageOk); // Что-то пошло не так
+                /*await*/ DisplayAlert(AppResource.messageError, ex.Message, AppResource.messageOk); // Что-то пошло не так
                 return;
             }
         }
@@ -55,7 +58,7 @@ namespace BITIDAPP.Views.BHA
             }
         }
 
-        private void ChangeType(object sender, EventArgs e)
+        private async void ChangeType(object sender, EventArgs e)
         {
             try
             {
@@ -82,11 +85,7 @@ namespace BITIDAPP.Views.BHA
             }
             catch (Exception ex)
             {
-                // Что-то пошло не так
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    await DisplayAlert(AppResource.messageError, ex.Message, AppResource.messageOk);
-                });
+                await DisplayAlert(AppResource.messageError, ex.Message, AppResource.messageOk); // Что-то пошло не так
                 return;
             }
         }

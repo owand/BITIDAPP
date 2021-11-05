@@ -16,7 +16,7 @@ namespace BITIDAPP
     public partial class App : Application
     {
         // Переменные для базы данных
-        public static SQLiteConnection database;
+        public static SQLiteConnection database = null;
         public static SQLiteConnection Database
         {
             get

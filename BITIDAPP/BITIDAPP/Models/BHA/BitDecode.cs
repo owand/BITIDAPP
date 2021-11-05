@@ -1,12 +1,13 @@
 ﻿using SQLiteNetExtensions.Extensions;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace BITIDAPP.Models.BHA
 {
     public class BitDecode : ViewModelBase
     {
-
+        //public List<BitCodeModel> TypePickerList { get; set; }
 
         public List<BitCodeModel> Code1SymbolList { get; set; }
         public List<BitCodeModel> Code2SymbolList { get; set; }
@@ -15,10 +16,21 @@ namespace BITIDAPP.Models.BHA
 
         public BitDecode(int Id)
         {
-            Code1SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 1 && c.LANGUAGE == App.AppLanguage).ToList());
-            Code2SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 2 && c.LANGUAGE == App.AppLanguage).ToList());
-            Code3SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 3 && c.LANGUAGE == App.AppLanguage).ToList());
-            Code4SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 4 && c.LANGUAGE == App.AppLanguage).ToList());
+            //TypePickerList = /*Id == 0 ? null :*/ App.Database.Table<BitCodeModel>().GroupBy(x => x.TYPEID).Select(x => x.First()).ToList();
+            //foreach (BitCodeModel element in TypePickerList)
+            //{
+            //    App.Database.GetChildren(element);
+            //}
+
+            //Code1SymbolList = null;
+            Code1SymbolList = Id == 0 ? null : new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 1 && c.LANGUAGE == App.AppLanguage).ToList());
+            //Code1SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 1 && c.LANGUAGE == App.AppLanguage).ToList());
+            Code2SymbolList = Id == 0 ? null : new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 2 && c.LANGUAGE == App.AppLanguage).ToList());
+            //Code2SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 2 && c.LANGUAGE == App.AppLanguage).ToList());
+            Code3SymbolList = Id == 0 ? null : new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 3 && c.LANGUAGE == App.AppLanguage).ToList());
+            //Code3SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 3 && c.LANGUAGE == App.AppLanguage).ToList());
+            Code4SymbolList = Id == 0 ? null : new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 4 && c.LANGUAGE == App.AppLanguage).ToList());
+            //Code4SymbolList = new List<BitCodeModel>(App.Database.Table<BitCodeModel>().Where(c => c.TYPEID == Id && c.SERIAL == 4 && c.LANGUAGE == App.AppLanguage).ToList());
         }
 
         public List<BitCodeModel> DecodeContent(int TypeId, string Symbol_1, string Symbol_2, string Symbol_3, string Symbol_4)
@@ -44,11 +56,12 @@ namespace BITIDAPP.Models.BHA
     public class BitTypeListViewModel : ViewModelBase
     {
 
-        public List<BitCodeModel> TypePickerList { get; set; }
+        public ObservableCollection<BitCodeModel> TypePickerList { get; set; }
 
         public BitTypeListViewModel()
         {
-            TypePickerList = App.Database.Table<BitCodeModel>().GroupBy(x => x.TYPEID).Select(x => x.First()).ToList();
+            TypePickerList = App.database == null ? null : new ObservableCollection<BitCodeModel>(App.Database?.Table<BitCodeModel>().GroupBy(x => x.TYPEID).Select(x => x.First()).ToList());
+            //TypePickerList = App.Database.Table<BitCodeModel>().GroupBy(x => x.TYPEID).Select(x => x.First()).ToList();
             foreach (BitCodeModel element in TypePickerList)
             {
                 App.Database.GetChildren(element);
