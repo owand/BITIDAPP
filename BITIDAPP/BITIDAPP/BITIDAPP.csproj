@@ -11,11 +11,13 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageProjectUrl>https://sites.google.com/view/owand/BITDecode</PackageProjectUrl>
     <Configurations>Debug</Configurations>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <Optimize>True</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
