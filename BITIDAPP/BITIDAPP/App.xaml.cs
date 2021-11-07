@@ -3,7 +3,6 @@ using BITIDAPP.Resources;
 using BITIDAPP.Views.Settings;
 using SQLite;
 using System;
-using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -105,7 +104,7 @@ namespace BITIDAPP
         }
 
 
-        protected async override void OnStart()
+        protected override async void OnStart()
         {
             // Handle when your app starts
             try
@@ -124,7 +123,7 @@ namespace BITIDAPP
                     await CopyDBifNotExists();
                     await Application.Current.MainPage.DisplayAlert("Congratulations! ", " The database has been updated!", AppResource.messageOk); // Что-то пошло не так
                 }
-                this.MainPage = new AppShell();
+                MainPage = new AppShell();
             }
             catch (Exception ex)
             {

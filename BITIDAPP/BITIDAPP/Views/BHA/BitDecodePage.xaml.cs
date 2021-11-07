@@ -44,7 +44,8 @@ namespace BITIDAPP.Views.BHA
             }
             catch (Exception ex)
             {
-                /*await*/ DisplayAlert(AppResource.messageError, ex.Message, AppResource.messageOk); // Что-то пошло не так
+                /*await*/
+                DisplayAlert(AppResource.messageError, ex.Message, AppResource.messageOk); // Что-то пошло не так
                 return;
             }
         }

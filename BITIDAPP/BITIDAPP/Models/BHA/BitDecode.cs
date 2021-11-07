@@ -1,6 +1,5 @@
 ﻿using SQLiteNetExtensions.Extensions;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace BITIDAPP.Models.BHA
