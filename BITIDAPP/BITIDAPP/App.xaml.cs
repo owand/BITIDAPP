@@ -11,7 +11,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-//[assembly: ExportFont("MaterialIcons-Regular.ttf", Alias = "MaterialIcons")]
+[assembly: ExportFont("MaterialIcons-Regular.ttf", Alias = "MaterialIcons")]
 namespace BITIDAPP
 {
     public partial class App : Application
