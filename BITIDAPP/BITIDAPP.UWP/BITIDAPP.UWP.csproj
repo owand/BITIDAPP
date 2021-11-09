@@ -22,7 +22,7 @@
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxPackageDir>D:\myApps\Store\</AppxPackageDir>
     <AppxBundle>Always</AppxBundle>
-    <PackageCertificateThumbprint>F5AA9AD2322A7E39CF0D292146C25334139F2772</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>0EDFB39E077EBCDD6C9A6A1C4DAC7A46ACFF49CB</PackageCertificateThumbprint>
     <AppInstallerUpdateFrequency>0</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
     <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
